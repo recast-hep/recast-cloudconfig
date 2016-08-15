@@ -59,6 +59,7 @@ chkconfig supervisord on
 
 # Add robot
 useradd robot-worker
+echo "robot-worker ALL=(ALL) NOPASSWD:/opt/recast-cloudconfig/skygrid-worker/fix-docker-output-ownership" >> /etc/sudoers
 
 # Get and install configs
 git clone https://github.com/recast-hep/recast-cloudconfig.git /opt/recast-cloudconfig/
@@ -71,7 +72,6 @@ echo "WORK_QUEUE = \"$WORK_QUEUE\"" >> /opt/recast-cloudconfig/skygrid-worker/wo
 echo "SLEEP_TIME = 60. # seconds" >> /opt/recast-cloudconfig/skygrid-worker/worker.cfg
 echo "CONTAINER_CHECK_INTERVAL = 10. # seconds" >> /opt/recast-cloudconfig/skygrid-worker/worker.cfg
 
-echo "robot-worker ALL=(ALL) NOPASSWD:/opt/recast-cloudconfig/skygrid-worker/fix-docker-output-ownership" >> /etc/sudoers
 
 # Start service
 supervisorctl reread
