@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -e
+
+chown -R robot-worker /opt/skygrid-worker/workdir

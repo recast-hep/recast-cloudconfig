@@ -1,0 +1,4 @@
+#!/bin/sh
+set -e
+
+exec /opt/skygrid-worker/venv/bin/python -m dockerworker.main
