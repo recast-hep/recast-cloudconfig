@@ -1,0 +1,3 @@
+#!/bin/bash
+
+exec /opt/metascheduler/venv/bin -c /opt/recast-cloudconfig/skygrid-metascheduler/gunicorn.cfg metascheduler.main:app
